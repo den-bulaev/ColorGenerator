@@ -18,7 +18,7 @@ function App() {
     setIsValidationFailed(false);
   }, [isValidationFailed]);
 
-  const colorValidation = new RegExp(/^#[\d\w]{6}/);
+  const colorValidation = new RegExp(/^#[\d\w]{6}$/);
 
   const handleSubmitColor = (e: FormEvent<HTMLFormElement>, color: string) => {
     e.preventDefault();
