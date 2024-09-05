@@ -1,13 +1,14 @@
 import { CSSProperties } from "react";
 import Values from "values.js";
+import { toast } from "react-toastify";
 
 const SingleColor: React.FC<{ color: Values }> = ({ color }) => {
   async function copyToClipboard(text: string) {
     try {
       await navigator.clipboard.writeText(text);
-      console.log("Text copied to clipboard");
-    } catch (error) {
-      console.error("Failed to copy text: ", error);
+      toast.success("Color successfully copied!");
+    } catch {
+      toast.error("Failed to copy color: ");
     }
   }
 
